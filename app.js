@@ -11,8 +11,15 @@ btn.addEventListener("click",function(){
     delBtn.innerText="Delete";
     delBtn.classList.add("delete");
 
-    item.appendChild(delBtn);
-    ul.appendChild(item);
+    if(inp.value === "") {
+        alert("Please enter a task");
+        return;
+    }
+    else {
+        console.log("Task added: " + inp.value);
+        ul.appendChild(item);
+        item.appendChild(delBtn);
+    }
     inp.value="";
 });
 
